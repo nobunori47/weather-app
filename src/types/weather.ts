@@ -46,3 +46,11 @@ export interface WeatherData {
   dailyForecasts: DailyForecast[];
   currentPop: number;
 }
+
+export interface ForecastResponse {
+  list: ForecastItem[];
+  city: {
+    name: string;
+    timezone: number;
+  };
+}
