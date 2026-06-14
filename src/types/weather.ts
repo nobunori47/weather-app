@@ -5,13 +5,12 @@ export interface WeatherCondition {
   icon: string;
 }
 
-export interface CurrentWeatherResponse {
-  name: string;
-  main: {
-    temp: number;
-    humidity: number;
-  };
-  weather: WeatherCondition[];
+export interface CurrentWeather {
+  temp: number;
+  humidity: number;
+  description: string;
+  icon: string;
+  windSpeed: number;
 }
 
 export interface ForecastItem {
@@ -25,14 +24,6 @@ export interface ForecastItem {
   };
   weather: WeatherCondition[];
   pop: number;
-}
-
-export interface ForecastResponse {
-  list: ForecastItem[];
-  city: {
-    name: string;
-    timezone: number;
-  };
 }
 
 export interface DailyForecast {
@@ -51,7 +42,7 @@ export interface DailyForecast {
 
 export interface WeatherData {
   cityName: string;
-  current: CurrentWeatherResponse;
+  current: CurrentWeather;
   dailyForecasts: DailyForecast[];
   currentPop: number;
 }
